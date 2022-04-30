@@ -1,7 +1,7 @@
 {
-  "name": "react-typescript-webpack-starter",
+  "name": "news-react-typescript-webpack",
   "version": "1.0.0",
-  "description": "A starter template for React with Typescript using Webpack 5",
+  "description": "News React with Typescript using Webpack 5",
   "scripts": {
     "start": "webpack serve --config webpack/webpack.config.js --env env=dev",
     "build": "webpack --config webpack/webpack.config.js --env env=prod",
@@ -16,7 +16,7 @@
     "Starter Template",
     "Boilerplate"
   ],
-  "author": "Vishwas&ModMax",
+  "author": "korobprog",
   "license": "MIT",
   "dependencies": {
     "@emotion/react": "^11.9.0",
