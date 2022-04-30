@@ -1,10 +1,24 @@
-import { Counter } from './Counter'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Home from './pages/home'
+import Settings from './pages/Settings'
+//import Help from "./pages/Help";
+//import About from "./page/About";
+import { routes } from './shared/routes'
+import DenseAppBar from './components/Navbar/DenseAppBar'
 
-export const App = () => {
+function App() {
   return (
-    <>
-      <h1>React TypeScript Webpack Starter Template</h1>
-      <Counter />
-    </>
+    <BrowserRouter>
+      <main>
+        <DenseAppBar />
+        <Routes>
+          <Route path={routes.root} element={<Home />} />
+          <Route path={routes.settings} element={<Settings />} />
+          {/* <Route path={routes.help} element={<Help />} /> */}
+          {/* <Route path={routes.about} element={<About />} /> */}
+        </Routes>
+      </main>
+    </BrowserRouter>
   )
 }
+export default App
