@@ -32,8 +32,10 @@ module.exports = {
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       'material-ui/rule-name': 2,
       "react-redux/connect-prefer-named-arguments": 2,
+      '@date-io/date-fns': 'off',
+      "antd": 'off',
     },
 
-    plugins: ['material-ui', "react-redux"],
+    plugins: ['material-ui', "react-redux", "antd"],
   },
 }

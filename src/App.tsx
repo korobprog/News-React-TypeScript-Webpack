@@ -4,16 +4,16 @@ import Settings from './pages/Settings'
 //import Help from "./pages/Help";
 //import About from "./page/About";
 import { routes } from './shared/routes'
-import DenseAppBar from './components/Navbar/DenseAppBar'
+import ButtonAppBar from './components/Navbar/Menu'
 
 function App() {
   return (
     <BrowserRouter>
       <main>
-        <DenseAppBar />
+        <ButtonAppBar />
         <Routes>
           <Route path={routes.root} element={<Home />} />
-          <Route path={routes.settings} element={<Settings />} />
+          {/* <Route path={routes.settings} element={<Settings />} /> */}
           {/* <Route path={routes.help} element={<Help />} /> */}
           {/* <Route path={routes.about} element={<About />} /> */}
         </Routes>
