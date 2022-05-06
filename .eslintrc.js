@@ -21,6 +21,7 @@ module.exports = {
       'prettier/@typescript-eslint',
       'plugin:prettier/recommended',
       "plugin:react-redux/recommended",
+      "plugin:react-hooks/recommended",
     ],
     rules: {
       'no-unused-vars': 'off',

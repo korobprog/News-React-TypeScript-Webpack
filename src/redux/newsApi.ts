@@ -1,18 +1,20 @@
+import { Title } from '@mui/icons-material'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+//import firebaseConfig from './news-env'
 
-export interface Response {
+export interface TopLevel {
   status: string
   totalResults: number
-  articles: Articles[]
+  articles: Article[]
 }
 
-export interface Articles {
+export interface Article {
   source: Source
   author: null | string
   title: string
   description: string
   url: string
-  urlToImage: null | string
+  urlToImage: string
   publishedAt: Date
   content: string
 }
@@ -22,24 +24,33 @@ export interface Source {
   name: string
 }
 
+export enum Type {
+  News = 'getNews',
+}
+
 export const newsApi = createApi({
   reducerPath: 'getNews',
+  refetchOnFocus: true,
+  tagTypes: ['getNews'],
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://newsapi.org/v2/top-headlines/',
+    baseUrl: 'https://newsapi.org/v2/top-headlines',
   }),
+  //https://newsapi.org/v2/everything/?q=russia&language
   endpoints: (builder) => ({
-    newsApi: builder.query<Articles[], string>({
-      query: (title) => ({
+    newsApi: builder.query<Article[], string>({
+      query: () => ({
         url: '/',
         params: {
-          apiKey: '19fda756c8a34265b57408e22f7241cb', //import.meta.env.REACT_APP_NEWS_API_KEY,
-          q: title,
+          country: 'ru',
+          apiKey: 'a05140dd572a42c0a35b254e46c0bd0b', //import.meta.env.REACT_APP_NEWS_API_KEY, 19fda756c8a34265b57408e22f7241cb
           plot: 'full',
         },
       }),
-      transformResponse: (response: Response) => response.articles,
+      transformResponse: (response: TopLevel) => response.articles,
     }),
   }),
 })
 
 export const { useNewsApiQuery } = newsApi
+
+//19fda756c8a34265b57408e22f7241cb

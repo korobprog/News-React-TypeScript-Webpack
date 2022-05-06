@@ -1,6 +1,7 @@
 export const routes = {
   root: '/',
-  // settings: '/settings',
+  news: '/news',
+  newsletr: '/newsletr',
   // help: '/help',
   // about: '/about',
 }
