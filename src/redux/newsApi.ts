@@ -1,6 +1,4 @@
-import { Title } from '@mui/icons-material'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-//import firebaseConfig from './news-env'
 
 export interface TopLevel {
   status: string
