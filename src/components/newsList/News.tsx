@@ -1,14 +1,17 @@
 import { Grid } from '@mui/material'
-import { useNewsApiQuery } from '../../redux'
 import Card from '../NewsCard/Card'
 import CircularProgress from '@mui/material/CircularProgress'
+import { Article } from '../../redux'
 
-function News() {
-  const { data } = useNewsApiQuery('getNews')
+interface Props {
+  news?: Article[]
+}
+
+const News: React.FC<Props> = ({ news }) => {
   return (
     <Grid container sx={{ width: '100%' }}>
-      {data ? (
-        data.map((news) => <Card data={news} key={news.url} />)
+      {news ? (
+        news.map((article) => <Card data={article} key={article.url} />)
       ) : (
         <CircularProgress color="secondary" />
       )}

@@ -8,13 +8,15 @@ import Grid from '@mui/material/Grid'
 
 function ActionAreaCard({ data }) {
   return (
-    <Container sx={{ width: 1 / 2 }}>
+    <Container
+    // sx={{ width: 1 / 1 }}
+    >
       <Grid item xs={12}>
         <Card>
           <CardActionArea>
             <CardMedia
               component="img"
-              height="300"
+              height="600"
               image={data.urlToImage}
               alt="green iguana"
             />

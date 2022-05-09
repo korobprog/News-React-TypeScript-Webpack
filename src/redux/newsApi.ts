@@ -22,6 +22,11 @@ export interface Source {
   name: string
 }
 
+export interface Params {
+  to?: string
+  from?: string
+}
+
 export enum Type {
   News = 'getNews',
 }
@@ -31,17 +36,21 @@ export const newsApi = createApi({
   refetchOnFocus: true,
   tagTypes: ['getNews'],
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://newsapi.org/v2/top-headlines',
+    baseUrl: 'https://newsapi.org/v2/everything',
   }),
   //https://newsapi.org/v2/everything/?q=russia&language
   endpoints: (builder) => ({
-    newsApi: builder.query<Article[], string>({
-      query: () => ({
+    newsApi: builder.query<Article[], Params>({
+      query: ({ from, to }) => ({
         url: '/',
         params: {
-          country: 'ru',
+          // country: 'ru',
+          language: 'ru',
+          q: 'ru',
           apiKey: 'a05140dd572a42c0a35b254e46c0bd0b', //import.meta.env.REACT_APP_NEWS_API_KEY, 19fda756c8a34265b57408e22f7241cb
           plot: 'full',
+          from,
+          to,
         },
       }),
       transformResponse: (response: TopLevel) => response.articles,

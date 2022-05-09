@@ -5,17 +5,20 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 import Container from '@mui/material/Container'
 
-export default function BasicDatePicker() {
-  const [value, setValue] = React.useState<Date | null>(null)
+interface Props {
+  date?: Date
+  setDate?: (date: Date) => void
+}
 
+const BasicDatePicker: React.FC<Props> = ({ date, setDate }) => {
   return (
     <Container>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <DatePicker
           label="Поиск новости по дате"
-          value={value}
+          value={date}
           onChange={(newValue) => {
-            setValue(newValue)
+            setDate(newValue)
           }}
           renderInput={(params) => <TextField {...params} />}
         />
@@ -23,3 +26,5 @@ export default function BasicDatePicker() {
     </Container>
   )
 }
+
+export default BasicDatePicker
