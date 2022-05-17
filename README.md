@@ -1,18 +1,16 @@
-Проект новостей
+Проект новостей заметки
 
 [x] настройка 1 мая
+[x] каркас 5 мая
+[x] API 10 мая
+[x] Pagination 15 мая
 []
 []
-[]
-[]
-[]
-
 
 
 
 ## Install dependencies
 
-cd my-app &&
 yarn
 
 ## Run dev server
