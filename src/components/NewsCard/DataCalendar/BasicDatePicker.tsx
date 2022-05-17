@@ -9,7 +9,6 @@ interface Props {
   date?: Date
   setDate?: (date: Date) => void
 }
-
 const BasicDatePicker: React.FC<Props> = ({ date, setDate }) => {
   return (
     <Container>

@@ -14,6 +14,7 @@ import { useNavigate } from 'react-router-dom'
 import { routes } from '../../shared/routes'
 
 const pages = [
+  { title: 'Новости', to: routes.root },
   { title: 'Настройки', to: routes.settings },
   { title: 'Помощь', to: routes.help },
   { title: 'О нас', to: routes.about },
@@ -56,7 +57,7 @@ const ResponsiveAppBar = () => {
               textDecoration: 'none',
             }}
           >
-            МИРА
+            МИР
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -115,7 +116,7 @@ const ResponsiveAppBar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            МИРА
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (

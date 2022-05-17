@@ -20,8 +20,8 @@ module.exports = {
       'plugin:eslint-comments/recommended',
       'prettier/@typescript-eslint',
       'plugin:prettier/recommended',
-      "plugin:react-redux/recommended",
-      "plugin:react-hooks/recommended",
+      'plugin:react-redux/recommended',
+      'plugin:react-hooks/recommended',
     ],
     rules: {
       'no-unused-vars': 'off',
@@ -32,11 +32,13 @@ module.exports = {
       'react/react-in-jsx-scope': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       'material-ui/rule-name': 2,
-      "react-redux/connect-prefer-named-arguments": 2,
+      'react-redux/connect-prefer-named-arguments': 2,
       '@date-io/date-fns': 'off',
-      "antd": 'off',
+      antd: 'off',
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
     },
 
-    plugins: ['material-ui', "react-redux", "antd"],
+    plugins: ['material-ui', 'react-redux', 'antd'],
   },
 }
